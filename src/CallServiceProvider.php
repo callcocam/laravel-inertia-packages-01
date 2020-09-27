@@ -33,11 +33,22 @@ class CallServiceProvider extends BaseServiceProvider
         $this->registerMiddleware();
         $this->shareValidationErrors();
         $this->loadPublish();
+        $this->installScaffolding();
     }
 
     public function registerViews(){
 
           $this->loadViewsFrom(base_path('packages/resources/views'), 'call-views');
     }
-
+    /**
+     * Publish the migration files.
+     *
+     * @return void
+     */
+    protected function installScaffolding()
+    {
+        $this->publishes([
+            base_path('packages/scaffolding/') => app_path(),
+        ], 'call-scaffolding');
+    }
 }

@@ -12,12 +12,11 @@ Vue.prototype.$route = (...args) => route(...args).url()
 import '@/themeConfig.js'
 import '@/globalComponents.js'
 const app = document.getElementById('app')
-
 // Vuex Store
-//import store from '@/stores'
+import store from '@/stores'
 
 new Vue({
-    //store,
+    store,
     render: h => h(CallApp, {
         props: {
             initialPage: JSON.parse(app.dataset.page),

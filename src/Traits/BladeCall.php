@@ -15,7 +15,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
 
 trait BladeCall
 {
@@ -73,20 +72,20 @@ trait BladeCall
     protected function loadPublish(){
 
         $this->publishes([
-            __DIR__.'/../config/lw-call.php' => config_path('lw-call.php'),
-        ], 'lw-call');
+            base_path('packages/config/call.php') => config_path('call.php'),
+        ], 'call');
 
         $this->publishes([
-            __DIR__.'/../../resources' => resource_path()
-        ],'lw-call-views');
+            base_path('packages/resources/views') => resource_path()
+        ],'call-views');
 
         $this->publishes([
-            __DIR__.'/../package.json' => base_path('package.json')
-        ],'lw-call-package');
+            base_path('packages/package.json') => base_path('package.json')
+        ],'call-package');
 
         $this->publishes([
-            __DIR__.'/../../app-assets' => public_path('dist-assets'),
-        ], 'lw-call-app-assets');
+            base_path('packages/app-assets') => public_path('_dist/admin'),
+        ], 'call-app-assets');
 
     }
 
