@@ -9,7 +9,14 @@ namespace App\Http\Controllers\Traits;
 
 trait ControllerHelper
 {
-    protected $results = [];
+    protected $results = [
+        'actions'=>[],
+        'columns'=>[],
+        'data'=>[],
+        'errors'=>[],
+        'options'=>[],
+        'source'=>[],
+    ];
     protected $list = "List";
     protected $show = "Show";
     protected $edit = "Edit";
