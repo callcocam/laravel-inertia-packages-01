@@ -1,5 +1,5 @@
 {
-    "name": "callcocam/laravel-packages-inertia-01",
+    "name": "laravel-packages-inertia-01",
     "description": "Auth e administração de cruds e integração dinamica com vue js",
     "license": "MIT",
     "require": {
