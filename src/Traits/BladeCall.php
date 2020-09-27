@@ -69,24 +69,5 @@ trait BladeCall
         });
     }
 
-    protected function loadPublish(){
-
-        $this->publishes([
-            base_path('packages/callcocam/config/call.php') => config_path('call.php'),
-        ], 'call');
-
-        $this->publishes([
-            base_path('packages/callcocam/resources/views') => resource_path()
-        ],'call-views');
-
-        $this->publishes([
-            base_path('packages/package.json') => base_path('package.json')
-        ],'call-package');
-
-        $this->publishes([
-            base_path('packages/callcocam/app-assets') => public_path('_dist/admin'),
-        ], 'call-app-assets');
-
-    }
 
 }

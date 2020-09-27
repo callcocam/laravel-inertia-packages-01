@@ -34,6 +34,8 @@ class CallServiceProvider extends BaseServiceProvider
         $this->shareValidationErrors();
         $this->loadPublish();
         $this->installScaffolding();
+        $this->publishMigrations();
+        $this->publishAll();
     }
 
     public function registerViews(){
@@ -61,6 +63,44 @@ class CallServiceProvider extends BaseServiceProvider
     {
         $this->publishes([
             base_path('packages/database/') => database_path(),
-        ], 'all-migrations');
+        ], 'call-migrations');
+    }
+
+
+    protected function loadPublish(){
+
+        $this->publishes([
+            base_path('packages/config/call.php') => config_path('call.php'),
+        ], 'call');
+
+        $this->publishes([
+            base_path('packages/resources/views') => resource_path()
+        ],'call-views');
+
+        $this->publishes([
+            base_path('packages/package.json') => base_path('package.json')
+        ],'call-package');
+
+        $this->publishes([
+            base_path('packages/app-assets') => public_path('_dist/admin'),
+        ], 'call-app-assets');
+
+    }
+
+    /**
+     * Publish the migration files.
+     *
+     * @return void
+     */
+    protected function publishAll()
+    {
+        $this->publishes([
+            base_path('packages/database/') => database_path(),
+            base_path('packages/config/call.php') => config_path('call.php'),
+            base_path('packages/resources/views') => resource_path(),
+            base_path('packages/package.json') => base_path('package.json'),
+            base_path('packages/webpack.mix.js') => base_path('webpack.mix.js'),
+            base_path('packages/app-assets') => public_path('_dist/admin'),
+        ], 'call-all');
     }
 }
