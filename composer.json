@@ -3,7 +3,8 @@
     "description": "Auth e administração de cruds e integração dinamica com vue js",
     "license": "MIT",
     "require": {
-        "doctrine/dbal": "^2.10"
+        "doctrine/dbal": "^2.10",
+        "laravel/ui": "^3.0"
     },
     "authors": [
         {
