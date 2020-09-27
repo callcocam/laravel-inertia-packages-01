@@ -9,6 +9,7 @@ use Call\Routes\RouteServiceProvider;
 use Call\Support\Acl\AclServiceProvider;
 use Call\Tenant\TenantServiceProvider;
 use Call\Traits\BladeCall;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class CallServiceProvider extends BaseServiceProvider
@@ -53,6 +54,7 @@ class CallServiceProvider extends BaseServiceProvider
         $this->publishes([
             __DIR__.'/../scaffolding/' => app_path(),
         ], 'call-scaffolding');
+
     }
 
     /**
@@ -104,15 +106,17 @@ class CallServiceProvider extends BaseServiceProvider
      */
     protected function publishAll()
     {
+
         $this->publishes([
            __DIR__.'/../databases/' => database_path(),
             __DIR__.'/../config/call.php' => config_path('call.php'),
-           __DIR__.'/../resources/views' => resource_path(),
+           __DIR__.'/../resources/views' => resource_path('views'),
             __DIR__.'/../resources/js' => resource_path('_dist/admin/js'),
             __DIR__.'/../resources/sass' => resource_path('_dist/admin/sass'),
             __DIR__.'/../package.json' => base_path('package.json'),
             __DIR__.'/../webpack.mix.js' => base_path('webpack.mix.js'),
            __DIR__.'/../routes/web.php' => base_path('routes/web.php'),
+            __DIR__.'/../scaffolding/' => app_path()
         ], 'call-all');
     }
 
