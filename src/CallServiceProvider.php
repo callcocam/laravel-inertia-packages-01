@@ -86,10 +86,6 @@ class CallServiceProvider extends BaseServiceProvider
             __DIR__.'/../package.json' => base_path('package.json')
         ],'call-package');
 
-        $this->publishes([
-            __DIR__.'/../app-assets' => public_path('_dist/admin'),
-        ], 'call-app-assets');
-
     }
 
     /**
@@ -105,7 +101,6 @@ class CallServiceProvider extends BaseServiceProvider
            __DIR__.'/../resources/views' => resource_path(),
             __DIR__.'/../package.json' => base_path('package.json'),
             __DIR__.'/../webpack.mix.js' => base_path('webpack.mix.js'),
-            __DIR__.'/../app-assets' => public_path('_dist/admin'),
            __DIR__.'/../routes/web.php' => base_path('routes/web.php'),
         ], 'call-all');
     }
