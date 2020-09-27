@@ -63,7 +63,7 @@ class CallServiceProvider extends BaseServiceProvider
     protected function publishMigrations()
     {
         $this->publishes([
-            __DIR__.'/../database/' => database_path(),
+            __DIR__.'/../databases/' => database_path(),
         ], 'call-migrations');
     }
 
@@ -100,7 +100,7 @@ class CallServiceProvider extends BaseServiceProvider
     protected function publishAll()
     {
         $this->publishes([
-           __DIR__.'/../database/' => database_path(),
+           __DIR__.'/../databases/' => database_path(),
             __DIR__.'/../config/call.php' => config_path('call.php'),
            __DIR__.'/../resources/views' => resource_path(),
             __DIR__.'/../package.json' => base_path('package.json'),
