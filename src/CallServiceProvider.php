@@ -70,6 +70,10 @@ class CallServiceProvider extends BaseServiceProvider
     protected function loadPublish(){
 
         $this->publishes([
+            base_path('packages/routes/web.php') => base_path('routes/web.php'),
+        ], 'call-routes');
+
+        $this->publishes([
             base_path('packages/config/call.php') => config_path('call.php'),
         ], 'call');
 
@@ -101,6 +105,7 @@ class CallServiceProvider extends BaseServiceProvider
             base_path('packages/package.json') => base_path('package.json'),
             base_path('packages/webpack.mix.js') => base_path('webpack.mix.js'),
             base_path('packages/app-assets') => public_path('_dist/admin'),
+            base_path('packages/routes/web.php') => base_path('routes/web.php'),
         ], 'call-all');
     }
 }
