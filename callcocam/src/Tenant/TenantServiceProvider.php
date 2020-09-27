@@ -32,7 +32,7 @@ class TenantServiceProvider extends ServiceProvider
     protected function publishMigrations()
     {
         $this->publishes([
-            base_path('packages/databases/migrations/') => database_path('migrations'),
+            base_path('packages/callcocam/databases/migrations/') => database_path('migrations'),
         ], 'call-migrations');
     }
 
@@ -43,6 +43,6 @@ class TenantServiceProvider extends ServiceProvider
      */
     protected function loadMigrations()
     {
-        $this->loadMigrationsFrom( base_path('packages/databases/migrations'));
+        $this->loadMigrationsFrom( base_path('packages/callcocam/databases/migrations'));
     }
 }

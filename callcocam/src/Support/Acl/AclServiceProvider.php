@@ -102,7 +102,7 @@ class AclServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/migrations/' => database_path('migrations'),
-        ], 'lw-call-acl-migrations');
+        ], 'call-acl-migrations');
     }
 
     /**

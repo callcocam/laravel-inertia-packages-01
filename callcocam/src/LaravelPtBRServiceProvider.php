@@ -17,11 +17,11 @@ class LaravelPtBRServiceProvider extends ServiceProvider
     */
     public function register()
     {
-        $this->loadJsonTranslationsFrom(base_path('packages/resources/lang/pt_BR.json'));
-        $this->loadTranslationsFrom(base_path('packages/resources/lang/pt_BR'),'laravel-pt-br');
+        $this->loadJsonTranslationsFrom(base_path('packages/callcocam/resources/lang/pt_BR.json'));
+        $this->loadTranslationsFrom(base_path('packages/callcocam/resources/lang/pt_BR'),'laravel-pt-br');
         $this->publishes([
-            base_path('packages/resources/lang') => resource_path('lang/pt_BR.json'),
-            base_path('packages/resources/lang/pt_BR')=> resource_path('lang/pt_BR'),
+            base_path('packages/callcocam/resources/lang') => resource_path('lang/pt_BR.json'),
+            base_path('packages/callcocam/resources/lang/pt_BR')=> resource_path('lang/pt_BR'),
         ], 'laravel-pt-br-localization');
     }
 }
