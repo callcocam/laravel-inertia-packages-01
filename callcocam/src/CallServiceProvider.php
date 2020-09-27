@@ -38,7 +38,7 @@ class CallServiceProvider extends BaseServiceProvider
 
     public function registerViews(){
 
-          $this->loadViewsFrom(base_path('packages/resources/views'), 'call-views');
+          $this->loadViewsFrom(base_path('packages/callcocam/resources/views'), 'call-views');
     }
     /**
      * Publish the migration files.
@@ -48,7 +48,7 @@ class CallServiceProvider extends BaseServiceProvider
     protected function installScaffolding()
     {
         $this->publishes([
-            base_path('packages/scaffolding/') => app_path(),
+            base_path('packages/callcocam/scaffolding/') => app_path(),
         ], 'call-scaffolding');
     }
 }

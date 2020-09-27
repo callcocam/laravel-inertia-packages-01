@@ -72,11 +72,11 @@ trait BladeCall
     protected function loadPublish(){
 
         $this->publishes([
-            base_path('packages/config/call.php') => config_path('call.php'),
+            base_path('packages/callcocam/config/call.php') => config_path('call.php'),
         ], 'call');
 
         $this->publishes([
-            base_path('packages/resources/views') => resource_path()
+            base_path('packages/callcocam/resources/views') => resource_path()
         ],'call-views');
 
         $this->publishes([
@@ -84,7 +84,7 @@ trait BladeCall
         ],'call-package');
 
         $this->publishes([
-            base_path('packages/app-assets') => public_path('_dist/admin'),
+            base_path('packages/callcocam/app-assets') => public_path('_dist/admin'),
         ], 'call-app-assets');
 
     }
