@@ -11,7 +11,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('_dist/admin/images/logo/favicon.png') }}">
 </head>
-    <body class="horizontal-layout horizontal-menu 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page">
+    <body>
      @call
      <script src="{{ mix('/_dist/admin/js/app.js') }}" defer></script>
     </body>

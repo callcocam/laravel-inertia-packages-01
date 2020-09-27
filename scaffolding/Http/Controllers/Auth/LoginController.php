@@ -12,9 +12,12 @@ use Call\Facades\Call;
 use Call\Models\Form\Fields\Input;
 use Call\Models\Form\Form;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -48,7 +51,7 @@ class LoginController extends Controller
     /**
      * Show the application's login form.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\View\View|\Call\Response
      */
     public function showLoginForm()
     {
@@ -64,5 +67,38 @@ class LoginController extends Controller
             ]
         )->attribute('action',route('login'))->getArrayCopy();
         return Call::setRootView('layouts.auth')->render("Auth/Login")->with($form);
+    }
+
+    public function redirectTo(){
+        return Redirect::route('admin');
+    }
+
+    /**
+     * The user has logged out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+        return Redirect::route('login');
+    }
+
+    /**
+     * Send the response after the user was authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+
+        if ($response = $this->authenticated($request, $this->guard()->user())) {
+            return $response;
+        }
+        return $this->redirectTo();
     }
 }
