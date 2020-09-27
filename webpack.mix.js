@@ -14,19 +14,19 @@ const mix = require('laravel-mix');
 mix.webpackConfig({
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "packages/resources/js/src"),
-            "@assets": path.resolve(__dirname, "packages/resources/assets"),
-            "@store": path.resolve(__dirname, "packages/resources/js/src/store"),
+            "@": path.resolve(__dirname, "resources/_dist/admin/js/src"),
+            "@assets": path.resolve(__dirname, "resources/_dist/admin/resources/assets"),
+            "@store": path.resolve(__dirname, "resources/_dist/admin/resources/js/src/store"),
             "@plugins": path.resolve(
                 __dirname,
-                "packages/resources/js/src/utilities/plugins"
+                "resources/_dist/admin/resources/js/src/utilities/plugins"
             ),
-            "@views": path.resolve(__dirname, "packages/resources/js/src/Pages"),
+            "@views": path.resolve(__dirname, "resources/_dist/admin/resources/js/src/Pages"),
             "@components": path.resolve(
                 __dirname,
-                "packages/resources/js/src/components"
+                "resources/_dist/admin/resources/js/src/components"
             ),
-            "@sass": path.resolve(__dirname, "packages/resources/sass")
+            "@sass": path.resolve(__dirname, "resources/_dist/admin/resources/sass")
         }
     },
     output: {
@@ -34,12 +34,10 @@ mix.webpackConfig({
     }
 });
 
-mix.js('packages/resources/js/app.js', 'public/_dist/admin/js')
-    .sass('packages/resources/sass/app.scss', 'public/_dist/admin/css');
-// mix.js('packages/resources/js/app.js', 'public/_dist/admin/js')
-//     .sass('packages/resources/sass/app.scss', 'public/_dist/admin/css')
-//     .copy('packages/resources/assets/css/iconfont.css', 'public/_dist/admin/css/iconfont.css')
-//     .copyDirectory('packages/resources/assets/fonts', 'public/_dist/admin/fonts') ;
+mix.js('resources/_dist/admin/resources/js/app.js', 'public/_dist/admin/js')
+    .sass('resources/_dist/admin/resources/sass/app.scss', 'public/_dist/admin/css');
+//     .copy('resources/_dist/admin/resources/assets/css/iconfont.css', 'public/_dist/admin/css/iconfont.css')
+//     .copyDirectory('resources/_dist/admin/resources/assets/fonts', 'public/_dist/admin/fonts') ;
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

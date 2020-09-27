@@ -79,6 +79,15 @@ class CallServiceProvider extends BaseServiceProvider
         ], 'call');
 
         $this->publishes([
+            __DIR__.'/../resources/sass' => resource_path('_dist/admin/sass')
+        ],'call-sass');
+
+
+        $this->publishes([
+            __DIR__.'/../resources/js' => resource_path('_dist/admin/js')
+        ],'call-js');
+
+        $this->publishes([
             __DIR__.'/../resources/views' => resource_path()
         ],'call-views');
 
@@ -99,6 +108,8 @@ class CallServiceProvider extends BaseServiceProvider
            __DIR__.'/../databases/' => database_path(),
             __DIR__.'/../config/call.php' => config_path('call.php'),
            __DIR__.'/../resources/views' => resource_path(),
+            __DIR__.'/../resources/js' => resource_path('_dist/admin/js'),
+            __DIR__.'/../resources/sass' => resource_path('_dist/admin/sass'),
             __DIR__.'/../package.json' => base_path('package.json'),
             __DIR__.'/../webpack.mix.js' => base_path('webpack.mix.js'),
            __DIR__.'/../routes/web.php' => base_path('routes/web.php'),
