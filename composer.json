@@ -1,0 +1,30 @@
+{
+    "name": "callcocam/laravel-packages-inertia-01",
+    "description": "Auth e administração de cruds e integração dinamica com vue js",
+    "license": "MIT",
+    "require": {
+        "doctrine/dbal": "^2.10"
+    },
+    "authors": [
+        {
+            "name": "Claudio Campos",
+            "email": "callcocam@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "src/helper.php"
+        ],
+        "psr-4": {
+            "Call\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Call\\CallServiceProvider"
+            ]
+        }
+    }
+}
