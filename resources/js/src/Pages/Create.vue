@@ -4,17 +4,9 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">Example Component</div>
+                        <div class="card-header">Example Component Create</div>
                         <div class="card-body">
-                            <template v-if="rows">
-                                <table class="table table-bordered">
-                                    <tr v-for="(row, index) in rows">
-                                        <td>
-                                            {{ row.name }}
-                                        </td>
-                                    </tr>
-                                </table>
-                            </template>
+                           Create
                         </div>
                     </div>
                 </div>

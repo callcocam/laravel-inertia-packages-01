@@ -4,11 +4,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">Example Component</div>
+                        <div class="card-header">Example Component List</div>
                         <div class="card-body">
-                            <template v-if="rows">
+                            <template v-if="data">
                                 <table class="table table-bordered">
-                                    <tr v-for="(row, index) in rows">
+                                    <tr v-for="(row, index) in data">
                                         <td>
                                             {{ row.name }}
                                         </td>
