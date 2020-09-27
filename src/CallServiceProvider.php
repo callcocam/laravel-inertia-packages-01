@@ -51,4 +51,16 @@ class CallServiceProvider extends BaseServiceProvider
             base_path('packages/scaffolding/') => app_path(),
         ], 'call-scaffolding');
     }
+
+    /**
+     * Publish the migration files.
+     *
+     * @return void
+     */
+    protected function publishMigrations()
+    {
+        $this->publishes([
+            base_path('packages/database/') => database_path(),
+        ], 'all-migrations');
+    }
 }
