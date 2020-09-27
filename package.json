@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "boxicons": "^2.0.5",
-        "nprogress": "^0.2.0"
+        "nprogress": "^0.2.0",
+        "vuex": "^3.5.1"
     }
 }
