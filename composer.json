@@ -14,7 +14,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "files": [
-            "src/helper.php"
+            "src/helpers.php"
         ],
         "psr-4": {
             "Call\\": "src"
