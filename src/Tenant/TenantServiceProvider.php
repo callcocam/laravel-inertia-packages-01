@@ -21,28 +21,7 @@ class TenantServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadMigrations();
-        $this->publishMigrations();
-    }
-    /**
-     * Publish the migration files.
-     *
-     * @return void
-     */
-    protected function publishMigrations()
-    {
-        $this->publishes([
-            base_path('packages/databases/migrations/') => database_path('migrations'),
-        ], 'call-migrations');
+
     }
 
-    /**
-     * Load our migration files.
-     *
-     * @return void
-     */
-    protected function loadMigrations()
-    {
-        $this->loadMigrationsFrom( base_path('packages/databases/migrations'));
-    }
 }
